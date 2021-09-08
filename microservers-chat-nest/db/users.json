@@ -1,0 +1,92 @@
+[
+  {
+    "_id": {
+      "$oid": "61279d505d6692dc25726760"
+    },
+    "isOnline": false,
+    "password": "$2a$05$jOT8wdNvh9BYXMTQ3RpmZ.sMwj12R3jMwJIwXQfqP1Cgb3JDzSBGu",
+    "email": "user1@gmail.com",
+    "lastName": "Smith",
+    "firstName": "Bob",
+    "exitDate": 1629986128140,
+    "photo": "user1.jpeg",
+    "messages": ["000790505d6692dc25726762", "001790505d6692dc25726762"],
+    "notRecived": [],
+    "rooms": ["00279d505d6692dc25726762"]
+  },
+  {
+    "_id": {
+      "$oid": "61279d505d6692dc25726761"
+    },
+    "isOnline": true,
+    "password": "$2a$05$jOT8wdNvh9BYXMTQ3RpmZ.sMwj12R3jMwJIwXQfqP1Cgb3JDzSBGu",
+    "email": "user2@gmail.com",
+    "lastName": "Morly",
+    "firstName": "Angela",
+    "exitDate": 1629986128141,
+    "photo": "user2.jpeg",
+    "messages": ["002790505d6692dc25726762"],
+    "notRecived": [],
+    "rooms": ["00279d505d6692dc25726762"]
+  },
+  {
+    "_id": {
+      "$oid": "61279d505d6692dc25726762"
+    },
+    "isOnline": true,
+    "password": "$2a$05$jOT8wdNvh9BYXMTQ3RpmZ.sMwj12R3jMwJIwXQfqP1Cgb3JDzSBGu",
+    "email": "user3@gmail.com",
+    "lastName": "Ivaschenko",
+    "firstName": "Vlad",
+    "exitDate": 1629986128142,
+    "photo": "default.jpeg",
+    "messages": ["003790505d6692dc25726762", "004790505d6692dc25726762", "006790505d6692dc25726762", "008790505d6692dc25726762"],
+    "notRecived": ["001790505d6692dc25726762", "005790505d6692dc25726762", "007690505d6692dc25726762"],
+    "rooms": ["00279d505d6692dc25726762", "01279d505d6692dc25726762"]
+  },
+  {
+    "_id": {
+      "$oid": "61279d505d6692dc25726763"
+    },
+    "isOnline": false,
+    "password": "$2a$05$jOT8wdNvh9BYXMTQ3RpmZ.sMwj12R3jMwJIwXQfqP1Cgb3JDzSBGu",
+    "email": "user4@gmail.com",
+    "lastName": "Керри",
+    "firstName": "Джим",
+    "exitDate": 1629986128143,
+    "photo": "user3.jpeg",
+    "messages": ["005790505d6692dc25726762", "007790505d6692dc25726762"],
+    "notRecived": [],
+    "rooms": ["01279d505d6692dc25726762"]
+  },
+  {
+    "_id": {
+      "$oid": "61279d505d6692dc25726764"
+    },
+    "rooms": ["01279d505d6692dc25726762"],
+    "notRecived": [],
+    "messages": [],
+    "isOnline": true,
+    "password": "$2a$05$3EGQLjTHF8ReDOBe75eBReJrSVjkBnRBKTuZXNT0JIAb/k5COgdXi",
+    "email": "bshmalko97@gmail.com",
+    "lastName": "shmalko",
+    "firstName": "bohdan",
+    "exitDate": 1630652309119,
+    "photo": "default.jpeg"
+  },
+  {
+    "_id": {
+      "$oid": "61279d505d6692dc25726765"
+    },
+    "rooms": ["01279d505d6692dc25726762"],
+    "notRecived": [],
+    "messages": [],
+    "isOnline": true,
+    "password": "$2a$05$3EGQLjTHF8ReDOBe75eBReJrSVjkBnRBKTuZXNT0JIAb/k5COgdXi",
+    "email": "ggave197@gmail.com",
+    "lastName": "gave",
+    "firstName": "god",
+    "exitDate": 1630652309119,
+    "photo": "default.jpeg"
+  }
+]

@@ -1,0 +1,65 @@
+$backgroundInput: #fff;
+$colorInput: #707C97;
+$colorFormBtn: #fff;
+$backgroundFormBtn: linear-gradient(92.68deg, #7CB8F7 0%, #2A8BF2 100%);
+$title: #0D1C2E;
+
+.login {
+  padding: 30px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15% auto;
+    max-width: 500px;
+
+    .form__title {
+      margin-bottom: 50px;
+      button.title_btn {
+        background-color: transparent;
+        border: none;
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 26px;
+
+      }
+      button.title_btn.active {
+        color: red;
+        border-bottom: 2px solid $title;
+      }
+
+      .form__title_separator {
+        font-weight: 500;
+        font-size: 36px;
+        line-height: 26px;
+        color: $title;
+      }
+    }
+    .form__input {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      width: 100%;
+      padding: 16px 40px;
+      border: none;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      color: $colorInput;
+      background-color: $backgroundInput;
+    }
+    .form__input:nth-child(3) {
+      margin-bottom: 0;
+    }
+    .form__btn{
+      margin-top: 50px;
+      padding: 13px 50px;
+      max-width: 185px;
+      background: $backgroundFormBtn;
+      font-size: 20px;
+      line-height: 24px;
+      color: $colorFormBtn;
+      border: none;
+      border-radius: 6px;
+    }
+  }
+}
