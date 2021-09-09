@@ -1,0 +1,24 @@
+$backgroundInput: #fff;
+$colorInput: #707C97;
+
+$fontManrope: 'Manrope', 'Open Sans';
+
+:host{
+  width: 100%;
+}
+
+.input {
+  .input__item {
+    font-weight: Bold;
+    font-size: 18px;
+    line-height: 26px;
+    width: 100%;
+    padding: 16px 40px;
+    border: none;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    color: $colorInput;
+    background-color: $backgroundInput;
+    font-family: $fontManrope;
+  }
+}

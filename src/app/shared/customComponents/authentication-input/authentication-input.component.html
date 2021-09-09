@@ -1,0 +1,16 @@
+<input class="hidden" #input type="text" />
+<div class="auth" [formGroup]="authenticationForm">
+  <input
+    *ngFor="let item of getControls().controls; index as i"
+    #input
+    maxlength="1"
+    type="tel"
+    inputmode="tel"
+    [formControl]="item"
+    class="auth__input"
+    (input)="change(i + 1)"
+    (keydown)="keyDetection($event, i + 1)">
+
+</div>
+<input class="hidden" #input type="text" />
+

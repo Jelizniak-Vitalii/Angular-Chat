@@ -1,31 +1,29 @@
-$backgroundInput: #fff;
-$colorInput: #707C97;
 $colorFormBtn: #fff;
 $backgroundFormBtn: linear-gradient(92.68deg, #7CB8F7 0%, #2A8BF2 100%);
 $title: #0D1C2E;
 
 $fontManrope: 'Manrope', 'Open Sans';
 
-.registration {
+.login {
   padding: 30px;
   .form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10% auto;
+    margin: 15% auto;
     max-width: 500px;
-
     .form__title {
       margin-bottom: 50px;
-      .title_btn {
+      font-family: $fontManrope;
+      button.title_btn {
         background-color: transparent;
         border: none;
         font-weight: 500;
         font-size: 36px;
         line-height: 26px;
-        font-family: $fontManrope;
+
       }
-      .title_btn.active{
+      button.title_btn.active {
         color: red;
         border-bottom: 2px solid $title;
       }
@@ -36,24 +34,8 @@ $fontManrope: 'Manrope', 'Open Sans';
         color: $title;
       }
     }
-    .form__input {
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 26px;
-      width: 100%;
-      padding: 16px 40px;
-      border: none;
-      margin-bottom: 30px;
-      border-radius: 6px;
-      color: $colorInput;
-      background-color: $backgroundInput;
-      font-family: $fontManrope;
-    }
-    .form__input:nth-child(5) {
-      margin-bottom: 0;
-    }
-    .form__btn{
-      margin-top: 50px;
+    .form__btn {
+      margin-top: 20px;
       padding: 13px 50px;
       max-width: 185px;
       background: $backgroundFormBtn;

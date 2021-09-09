@@ -1,20 +1,12 @@
 <div class="login">
-  <form class="form" (ngSubmit)="submit()">
+  <form class="form" (ngSubmit)="submit()" [formGroup]="form">
     <div class="form__title">
       <button class="form__signIn title_btn" routerLinkActive="active">Sign In</button>
       <span class="form__title_separator">/</span>
       <button class="form__signUp title_btn" routerLink="/auth/registration">Sign Up</button>
     </div>
-    <input
-      class="form__input"
-      type="email"
-      placeholder="E-Mail"
-      formControlName="">
-    <input
-      class="form__input"
-      type="password"
-      placeholder="Password"
-      formControlName="">
+    <app-form-input [inputParameters]="inputConfigList.email" formControlName="email"></app-form-input>
+    <app-form-input [inputParameters]="inputConfigList.password" formControlName="password"></app-form-input>
     <button type="submit" class="form__btn">Sign In</button>
   </form>
 </div>

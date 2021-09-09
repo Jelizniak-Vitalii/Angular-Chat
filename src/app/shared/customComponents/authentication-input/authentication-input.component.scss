@@ -1,0 +1,41 @@
+$fontManrope: 'Manrope', 'Open Sans';
+
+.hidden {
+  display: none;
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  input[type="number"]:hover,
+  input[type="number"]:focus {
+    -moz-appearance: none;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .auth__input {
+    padding: 16px 12px;
+    width: 34px;
+    margin-right: 20px;
+    border-radius: 6px;
+    font-family: $fontManrope;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .auth__input:last-child {
+    margin-right: 0;
+  }
+}
