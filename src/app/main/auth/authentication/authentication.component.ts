@@ -22,14 +22,12 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
   });
 
   userData: AuthenticationValue;
-
   destroySubscribe = new Subject();
 
   constructor(
     private authService: AuthService,
     private _routes: ActivatedRoute,
     private cookie: CookieService,
-
   ) { }
 
   ngOnInit() {
@@ -44,7 +42,6 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
         } else {
           this.submit(environment.LOGIN_AUTHENTICATION, this.authenticationForm.value)
         }
-
       }
     })
   }
@@ -52,7 +49,6 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
   submit( url: string, value: AuthenticationValue ) {
     this.authService.authentication( url, value )
       .subscribe(res => {
-        console.log(res)
         this.cookie.set('token', res.token);
       }, error => { console.error(error.error.message) })
   }
