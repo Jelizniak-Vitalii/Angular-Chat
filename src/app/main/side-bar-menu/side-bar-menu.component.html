@@ -1,0 +1,25 @@
+<aside class="aside">
+  <div class="user">
+    <div class="user__img">
+      <img src="assets/images/sideBar/34.png">
+    </div>
+    <div class="user__name">Henry Jabbawockiez</div>
+  </div>
+  <nav class="nav">
+    <ul class="menu">
+      <li *ngFor="let link of NavigationConfigList"
+          class="menu__item"
+          routerLinkActive="active"
+          routerLink="{{link.href}}">
+        <mat-icon>{{link.icon}}</mat-icon>
+        {{link.text}}
+      </li>
+    </ul>
+  </nav>
+  <div class="logOut">
+    <button class="logOut__btn" routerLink="/logIn">
+      <img src="assets/images/sideBar/power.svg">
+      LOG OUT
+    </button>
+  </div>
+</aside>

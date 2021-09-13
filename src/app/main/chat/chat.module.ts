@@ -3,15 +3,17 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 
-import { SideBarMenuComponent } from "./components/side-bar-menu/side-bar-menu.component";
+import { ChatComponent } from "./chat.component";
+
+
 
 const routes: Routes = [
-  { path: '', component: SideBarMenuComponent },
+  { path: '', component: ChatComponent }
 ]
 
 @NgModule({
   declarations: [
-    SideBarMenuComponent
+    ChatComponent,
   ],
   imports: [
     CommonModule,

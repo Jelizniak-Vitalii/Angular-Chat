@@ -12,24 +12,23 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
 
-
-
 @NgModule({
-    declarations: [
-        AppComponent,
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        StoreModule.forRoot(reducers, {
-            metaReducers
-        }),
-        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-        StoreRouterConnectingModule.forRoot(),
-        EffectsModule.forRoot([])
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    StoreRouterConnectingModule.forRoot(),
+    EffectsModule.forRoot([]),
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

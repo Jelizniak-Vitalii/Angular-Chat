@@ -1,0 +1,78 @@
+$fontManrope: 'Manrope', 'Open Sans';
+
+.aside {
+  max-width: 290px;
+  width: 290px;
+  height: 100%;
+  background-color: #fff;
+  padding: 91px 0 52px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .user {
+    text-align: center;
+    .user__img {
+      margin-bottom: 15px;
+      img {
+        border-radius: 50%;
+      }
+    }
+    .user__name {
+      font-size: 18px;
+      line-height: 21px;
+      font-family: $fontManrope;
+    }
+  }
+  .nav {
+    .menu {
+      .menu__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 53px;
+        padding-left: 38px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        font-family: $fontManrope;
+        color: #707C97;
+        mat-icon {
+          margin-right: 17px;
+        }
+      }
+      .menu__item.active:before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 3px;
+        height: 40px;
+        background-color: #2A8BF2;
+        box-shadow: 1px 0px 10px rgba(42, 139, 242, 0.45), 0px 0px 10px rgba(42, 139, 242, 0.55), 4px 0px 25px rgba(42, 139, 242, 0.75);
+        border-radius: 3px;
+      }
+      .menu__item.active {
+        color: #2A8BF2;
+      }
+      .menu__item:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .logOut {
+    .logOut__btn {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: $fontManrope;
+      padding-left: 38px;
+      background-color: transparent;
+      color: #707C97;
+
+      img {
+        margin-right: 17px;
+      }
+    }
+  }
+}
