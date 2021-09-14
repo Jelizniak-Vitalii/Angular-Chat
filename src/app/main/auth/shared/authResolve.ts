@@ -3,9 +3,10 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { take } from "rxjs/operators";
 
-import { AuthService } from "../../service/authService";
+import { AuthService } from "./authService";
 
 @Injectable({ providedIn: 'root' })
+
 export class AuthResolver implements Resolve<string> {
 
   constructor(

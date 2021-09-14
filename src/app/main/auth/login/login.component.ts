@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { CookieService } from "ngx-cookie-service";
 
-import { inputConfigList } from "../authInput.config";
-import { AuthService } from "src/app/service/authService";
+import { inputConfigList } from "../shared/authInput.config";
+import { AuthService } from "src/app/main/auth/shared/authService";
 import { environment } from "src/environments/environment";
 
 @Component({
@@ -21,14 +20,13 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private cookie: CookieService,
     private router: Router
   ) { }
 
   submit(): void {
     this.authService.logIn(environment.LOGIN, this.form.value)
       .subscribe(res => {
-        this.cookie.set('token', res.token);
+        localStorage.setItem('token', res.token);
         this.router.navigate(['/auth/authentication']);
         this.form.reset();
       }, error => { console.error(error.error.message) })

@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 
 import { ChatComponent } from "./chat.component";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     FormsModule,
+    MatIconModule,
   ],
   exports: [
   ],

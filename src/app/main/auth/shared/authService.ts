@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {BehaviorSubject, Subject} from "rxjs";
-import { AuthenticationValue } from "../main/auth/auth.interface";
+import { BehaviorSubject } from "rxjs";
+
+import { AuthenticationValue } from "./auth.interface";
 
 @Injectable({
   providedIn: 'root'

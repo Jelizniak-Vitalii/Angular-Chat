@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { CookieService } from "ngx-cookie-service";
 import { Router } from "@angular/router";
 
-import { AuthService } from "src/app/service/authService";
+import { AuthService } from "src/app/main/auth/shared/authService";
 import { environment } from "src/environments/environment";
-import { inputConfigList } from "../authInput.config";
-import { AuthenticationValue } from "../auth.interface";
+import { inputConfigList } from "../shared/authInput.config";
+import { AuthenticationValue } from "../shared/auth.interface";
 
 @Component({
   selector: 'app-registration',
@@ -27,14 +26,13 @@ export class RegistrationComponent {
 
   constructor(
     private authService: AuthService,
-    private cookie: CookieService,
     private router: Router
   ) { }
 
   submit(): void {
     this.authService.registration(environment.REGISTRATION, { email: this.form.value.email })
       .subscribe(res => {
-        this.cookie.set('token', res.token);
+        localStorage.setItem('token', res.token);
         this.userData = this.form.value;
         this.userData.status = "registration";
         // @ts-ignore

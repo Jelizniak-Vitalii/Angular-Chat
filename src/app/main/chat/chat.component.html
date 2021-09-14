@@ -1,1 +1,46 @@
+<section class="section__chat">
+  <div class="chat">
+    <div class="chat__title">
+      <div class="title">Chats</div>
+      <button class="chat__title_btn"><mat-icon>add_icon</mat-icon>Create New Chat</button>
+    </div>
+    <div class="searchAndChoice">
+      <div class="search"><input class="search__input" placeholder="Search">
+        <mat-icon>search_icon</mat-icon>
+      </div>
+      <select class="select__chat">
+        <option>Messages</option>
+      </select>
+    </div>
 
+    <div class="users" *ngFor="let user of userMessageData; let i = index" (click)="showMessageDialog(i)">
+      <div class="user__info">
+        <div class="users__header">
+          <div class="user__img">
+            <img src="{{user.photo}}">
+            <span class="status" *ngIf="user.online"></span>
+          </div>
+          <div class="user__name">
+            <div class="name">
+              {{user.name}}
+            </div>
+            <div class="user__status">
+              {{user.status}}
+            </div>
+          </div>
+        </div>
+        <div class="users__message_time">
+          1 minute ago
+        </div>
+      </div>
+      <div class="message">
+        <div class="message__content">
+          <p class="message__text">
+            {{user.message}}
+          </p>
+        </div>
+        <span class="message__count" *ngIf="user.noChecked > 0">{{user.noChecked}}</span>
+      </div>
+    </div>
+  </div>
+</section>

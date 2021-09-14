@@ -2,13 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { takeUntil } from "rxjs/operators";
 import { Subject } from "rxjs";
-import { ActivatedRoute } from "@angular/router";
-import { CookieService } from "ngx-cookie-service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Store } from "@ngrx/store";
 
-
-import { AuthService } from "src/app/service/authService";
+import { AuthService } from "src/app/main/auth/shared/authService";
 import { environment } from "src/environments/environment";
-import { AuthenticationValue } from "../auth.interface";
+import { AuthenticationValue } from "../shared/auth.interface";
+import { userInfo } from "src/app/reducers/actions";
 
 @Component({
   selector: 'app-authentication',
@@ -17,6 +17,14 @@ import { AuthenticationValue } from "../auth.interface";
 })
 
 export class AuthenticationComponent implements OnInit, OnDestroy {
+
+  mockUserData = {
+    firstName: 'Vasya',
+    lastName: 'Pupkin',
+    exitDate: 1629986128140,
+    photo: 'assets/images/sideBar/34.png'
+  }
+
   public readonly authenticationForm: FormGroup = new FormGroup({
     secretKey: new FormControl('', [Validators.minLength(6)]),
   });
@@ -27,10 +35,13 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthService,
     private _routes: ActivatedRoute,
-    private cookie: CookieService,
+    private router: Router,
+    private store: Store
   ) { }
 
   ngOnInit() {
+    this.store.dispatch(userInfo({ firstName: 'vasya' }));
+
     this.userData = this._routes.snapshot.data['userData']
     this.authenticationForm.valueChanges
       .pipe(takeUntil(this.destroySubscribe))
@@ -49,7 +60,9 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
   submit( url: string, value: AuthenticationValue ) {
     this.authService.authentication( url, value )
       .subscribe(res => {
-        this.cookie.set('token', res.token);
+        localStorage.setItem('token', res.token);
+        // this.store.dispatch(userInfo({ userInfo: this.mockUserData }));
+        this.router.navigate(['/main/chat']);
       }, error => { console.error(error.error.message) })
   }
 

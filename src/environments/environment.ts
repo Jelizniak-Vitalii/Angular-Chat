@@ -1,13 +1,17 @@
 
+export const host = 'http://localhost:3000'
+
 
 export const environment = {
   production: false,
 
-  REGISTRATION: 'http://localhost:3000/register',
-  REGISTRATION_AUTHENTICATION: '/register/secret',
+  REGISTRATION: host + '/register',
+  REGISTRATION_AUTHENTICATION: host + '/register/secret',
 
-  LOGIN: 'http://localhost:3000/login',
-  LOGIN_AUTHENTICATION: '/login/secret'
+  LOGIN: host + '/login',
+  LOGIN_AUTHENTICATION: host + '/login/secret',
+
+  CHAT_GET_MESSAGES: host + '/chat-list'
 };
 
 

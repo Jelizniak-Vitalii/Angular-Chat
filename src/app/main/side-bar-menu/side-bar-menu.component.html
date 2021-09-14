@@ -1,13 +1,13 @@
 <aside class="aside">
-  <div class="user">
+  <div class="user" *ngFor="let user of userInfo">
     <div class="user__img">
-      <img src="assets/images/sideBar/34.png">
+      <img src="{{user.photo}}">
     </div>
-    <div class="user__name">Henry Jabbawockiez</div>
+    <div class="user__name">{{user.firstName + ' ' + user.lastName}}</div>
   </div>
   <nav class="nav">
     <ul class="menu">
-      <li *ngFor="let link of NavigationConfigList"
+      <li *ngFor="let link of configList"
           class="menu__item"
           routerLinkActive="active"
           routerLink="{{link.href}}">

@@ -1,24 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { select, Store } from "@ngrx/store";
+import { userInfo } from "../../reducers/selector";
 
-interface NavigationConfigListInterface {
-  text: string,
-  href: string,
-  icon: string
-}
+import { UserInfo } from "./sideBarInterface";
+import { SideBarConfigList } from "./sideBarConfigList";
 
 @Component({
   selector: 'app-side-bar-menu',
   templateUrl: './side-bar-menu.component.html',
   styleUrls: ['./side-bar-menu.component.scss']
 })
-export class SideBarMenuComponent {
 
-  NavigationConfigList: NavigationConfigListInterface[] = [
-    { text: 'HOME', href: 'main/home', icon: 'apps_icon' },
-    { text: 'CHAT', href: '/main/chat', icon: 'sms_icon' },
-    { text: 'CONTACT', href: 'contact', icon: 'person_icon' },
-    { text: 'CALENDAR', href: 'calendar', icon: 'date_range_icon' },
-    { text: 'SETTINGS', href: 'settings', icon: 'notifications_none_icon' },
-  ];
+export class SideBarMenuComponent implements OnInit {
+  userInfo: UserInfo[] = [];
+  configList = SideBarConfigList;
+
+  constructor(
+    private store: Store
+  ) {}
+
+  ngOnInit(): void {
+    // this.store.pipe(select(userInfo))
+    //   .subscribe((res: UserInfo) => {
+    //     this.userInfo.push(res)
+    //   })
+  }
 
 }

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.config.json",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -27,6 +27,7 @@
     "@ngrx/store-devtools": "^12.4.0",
     "material-design-icons": "^3.0.1",
     "material-icons": "^1.2.1",
+    "moment": "^2.29.1",
     "ngx-cookie-service": "^12.0.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",

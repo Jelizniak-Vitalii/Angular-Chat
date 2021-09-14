@@ -24,8 +24,7 @@ export class JwtAuthGuard implements CanActivate {
         context.getHandler(),
         context.getClass(),
       ]);
-      const jwtData = await this.authService.getJwtData(req.cookies);
-
+      const jwtData = await this.authService.getJwtData({token: req.headers.authorization});
       const jwtKeys = Object.keys(jwtData);
       if (keys && this.authService.diff(jwtKeys, keys).length) throw '';
       req.jwtData = jwtData;

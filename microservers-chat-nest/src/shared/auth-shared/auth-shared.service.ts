@@ -14,7 +14,6 @@ export class AuthSharedService {
     cookies,
   ): Promise<{ _id: string; secretKey?: string; email?: string }> {
     const { token } = cookies;
-    console.log(cookies);
     if (!token) throw '';
     return this.jwtService.verify(token);
   }
