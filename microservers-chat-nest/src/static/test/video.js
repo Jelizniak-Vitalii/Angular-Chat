@@ -17,44 +17,40 @@ navigator.mediaDevices
     //addVideoStream(myVideo, stream);
 
     myPeer.on('call', (call) => {
-      console.log('peer call');
-      call.answer(stream);
-      const video = document.createElement('video');
-      call.on('stream', (userVideoStream) => {
-        console.log('in call on stream');
-        addVideoStream(video, userVideoStream);
-      });
+        console.log('peer call');
+        call.answer(stream);
+        const video = document.createElement('video');
+        call.on('stream', (userVideoStream) => {
+            console.log('in call on stream');
+            addVideoStream(video, userVideoStream);
+        });
     });
 
     myPeer.on('open', (id) => {
-      console.log('peer open');
-      const wss = io('http://localhost:3001', {
-        auth: {
-          token: document.cookie.split('=')[1],
-        },
-      });
+        console.log('peer open');
+        const wss = io('http://localhost:3001');
 
-      wss.on('join', (userName) => {
-        console.log(userName + ' join');
-        connectToNewUser(id, stream);
-      });
+        wss.on('join', (userName) => {
+            console.log(userName + ' join');
+            connectToNewUser(id, stream);
+        });
 
-      wss.on('leave', (userName) => {
-        console.log(userName + ' leave');
-        if (peers[id]) peers[id].close();
-      });
+        wss.on('leave', (userName) => {
+            console.log(userName + ' leave');
+            if (peers[id]) peers[id].close();
+        });
     });
 
     function connectToNewUser(userId, stream) {
       const call = myPeer.call(userId, stream);
       const video = document.createElement('video');
       call.on('stream', (userVideoStream) => {
-        console.log('in call stream');
-        addVideoStream(video, userVideoStream);
+          console.log('in call stream');
+          addVideoStream(video, userVideoStream);
       });
       call.on('close', () => {
-        console.log('in call close');
-        video.remove();
+          console.log('in call close');
+          video.remove();
       });
 
       peers[userId] = call;

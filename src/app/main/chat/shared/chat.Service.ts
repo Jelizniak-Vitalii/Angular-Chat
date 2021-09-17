@@ -1,16 +1,16 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-
-import { UserData } from "./chatInterface";
-
-
-
+import {BehaviorSubject } from "rxjs";
+import {UserData} from "./chat.Interface";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ChatService {
+
+  userInfo = new BehaviorSubject<UserData>({} as any);
+  public userInfo$ = this.userInfo.asObservable();
 
   constructor(
     private http: HttpClient

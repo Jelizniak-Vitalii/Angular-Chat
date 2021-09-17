@@ -5,8 +5,6 @@ export interface State {
     exitDate: number,
     photo: string
   },
-
-  firstName: string,
 }
 
 const initialState:State = {
@@ -16,14 +14,15 @@ const initialState:State = {
     exitDate: 0,
     photo: ''
   },
-  firstName: ''
 }
 
-export const reducers = (state = initialState, action: any)  => {
+export const reducers = (state = initialState, action: any): State  => {
   switch (action.type) {
-    case '[Authentication] User_Info': {
-      return { ...state, firstName: state.firstName}
-    }
+    case 'USER_INFO':
+      return {
+        ...state,
+        userInfo: action.userInfo
+      }
     default: {
       return state;
     }

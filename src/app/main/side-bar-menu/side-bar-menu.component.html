@@ -1,25 +1,34 @@
-<aside class="aside">
+<aside class="aside active" [@showMenu]="isActive" [class.close]="isActive">
+  <div class="menu__icon" [class.close]="isActive">
+    <div (click)="isActive = !isActive">
+      <mat-icon  *ngIf="!isActive; else close">menu_open_icon</mat-icon>
+      <ng-template #close><mat-icon>menu_icon</mat-icon></ng-template>
+    </div>
+  </div>
   <div class="user" *ngFor="let user of userInfo">
-    <div class="user__img">
+    <div [class.close]="isActive" class="user__img">
       <img src="{{user.photo}}">
     </div>
-    <div class="user__name">{{user.firstName + ' ' + user.lastName}}</div>
+    <div  *ngIf="!isActive" class="user__name">
+      {{user.firstName + ' ' + user.lastName}}
+    </div>
   </div>
   <nav class="nav">
     <ul class="menu">
       <li *ngFor="let link of configList"
           class="menu__item"
           routerLinkActive="active"
-          routerLink="{{link.href}}">
+          routerLink="{{link.href}}"
+          [class.close]="isActive">
         <mat-icon>{{link.icon}}</mat-icon>
-        {{link.text}}
+        <span  *ngIf="!isActive">{{link.text}}</span>
       </li>
     </ul>
   </nav>
   <div class="logOut">
-    <button class="logOut__btn" routerLink="/logIn">
+    <button class="logOut__btn" routerLink="/logIn" [class.close]="isActive">
       <img src="assets/images/sideBar/power.svg">
-      LOG OUT
+      <span class="logOut__btn_text"  *ngIf="!isActive">LOG OUT</span>
     </button>
   </div>
 </aside>

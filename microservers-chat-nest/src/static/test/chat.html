@@ -24,16 +24,16 @@
   wss.emit('chatToServer', 'test')
 
   wss.on('message', data => {
-    message.id = data.id
-    console.log('----New message-----');
-    console.log(data);
-    console.log('--------------------');
+      message.id = data.id
+      console.log('----New message-----');
+      console.log(data);
+      console.log('--------------------');
   });
 
   wss.on('deletedMessage', data => {
-    console.log('---Deleted message--');
-    console.log(data);
-    console.log('--------------------');
+      console.log('---Deleted message--');
+      console.log(data);
+      console.log('--------------------');
   })
 
   setTimeout(() => {

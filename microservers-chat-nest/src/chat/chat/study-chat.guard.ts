@@ -14,13 +14,13 @@ export class StudyChatGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const client: JwtSocketType = context.switchToHttp().getRequest();
+    const client = context.switchToHttp().getRequest();
     try {
       const keys = this.reflector.getAllAndOverride(MIDDLE_KEYS, [
         context.getHandler(),
         context.getClass(),
       ]);
-      const jwtData = await this.authService.getJwtData(client.handshake.auth);
+      const jwtData = await this.authService.getJwtData({token: client.headers.authorization});
       const jwtKeys = Object.keys(jwtData);
       if (keys && this.authService.diff(jwtKeys, keys).length) throw '';
       client.jwtData = jwtData;

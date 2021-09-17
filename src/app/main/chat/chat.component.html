@@ -2,7 +2,7 @@
   <div class="chat">
     <div class="chat__title">
       <div class="title">Chats</div>
-      <button class="chat__title_btn"><mat-icon>add_icon</mat-icon>Create New Chat</button>
+<!--      <button class="chat__title_btn"><mat-icon>add_icon</mat-icon>Create New Chat</button>-->
     </div>
     <div class="searchAndChoice">
       <div class="search"><input class="search__input" placeholder="Search">
@@ -29,9 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="users__message_time">
-          1 minute ago
-        </div>
+        <div class="users__message_time">{{user.time | TransformTime}}</div>
       </div>
       <div class="message">
         <div class="message__content">
@@ -43,4 +41,5 @@
       </div>
     </div>
   </div>
+  <router-outlet></router-outlet>
 </section>

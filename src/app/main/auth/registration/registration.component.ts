@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { AuthService } from "src/app/main/auth/shared/authService";
+import { AuthService } from "src/app/main/auth/shared/auth.Service";
 import { environment } from "src/environments/environment";
-import { inputConfigList } from "../shared/authInput.config";
-import { AuthenticationValue } from "../shared/auth.interface";
+import { inputConfigList } from "../shared/auth-Input.config";
+import { AuthenticationValue } from "../shared/auth.Interface";
 
 @Component({
   selector: 'app-registration',

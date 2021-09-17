@@ -5,9 +5,9 @@ import { Subject } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 
-import { AuthService } from "src/app/main/auth/shared/authService";
+import { AuthService } from "src/app/main/auth/shared/auth.Service";
 import { environment } from "src/environments/environment";
-import { AuthenticationValue } from "../shared/auth.interface";
+import { AuthenticationValue } from "../shared/auth.Interface";
 import { userInfo } from "src/app/reducers/actions";
 
 @Component({
@@ -40,8 +40,6 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.store.dispatch(userInfo({ firstName: 'vasya' }));
-
     this.userData = this._routes.snapshot.data['userData']
     this.authenticationForm.valueChanges
       .pipe(takeUntil(this.destroySubscribe))
@@ -61,7 +59,7 @@ export class AuthenticationComponent implements OnInit, OnDestroy {
     this.authService.authentication( url, value )
       .subscribe(res => {
         localStorage.setItem('token', res.token);
-        // this.store.dispatch(userInfo({ userInfo: this.mockUserData }));
+        this.store.dispatch(userInfo({ userInfo: this.mockUserData }));
         this.router.navigate(['/main/chat']);
       }, error => { console.error(error.error.message) })
   }

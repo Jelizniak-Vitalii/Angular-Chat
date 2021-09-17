@@ -144,9 +144,9 @@ export class StudyChatService {
     this.logger.log('Client disconnected');
   }
 
-  private async getUser(client: JwtSocketType): Promise<UsersModel> {
+  private async getUser(client: any): Promise<UsersModel> {
     const keys = ['_id', 'iat'];
-    const jwtData = await this.authService.getJwtData(client.handshake.auth);
+    const jwtData = await this.authService.getJwtData({token: client.headers.authorization});
     const jwtKeys = Object.keys(jwtData);
     if (keys && this.authService.diff(jwtKeys, keys).length) throw '';
     const { _id } = jwtData;

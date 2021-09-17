@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { inputConfigList } from "../shared/authInput.config";
-import { AuthService } from "src/app/main/auth/shared/authService";
+import { inputConfigList } from "../shared/auth-Input.config";
+import { AuthService } from "src/app/main/auth/shared/auth.Service";
 import { environment } from "src/environments/environment";
 
 @Component({

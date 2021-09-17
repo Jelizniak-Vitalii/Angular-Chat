@@ -5,20 +5,18 @@ import { MatIconModule } from "@angular/material/icon";
 import { RouterModule, Routes } from "@angular/router";
 import { PipeModule } from "src/app/shared/pipe/pipe.module"
 
-import { ChatComponent } from "./chat.component";
-import { ChatGuard } from "./shared/chat.guard";
-
+import { DialogsComponent } from "./dialogs.component";
+import { UserMessagesComponent } from "../../../../shared/customComponents/user-messages/user-messages.component";
 
 
 const routes: Routes = [
-  { path: '', component: ChatComponent, children: [
-      { path: 'dialogs', loadChildren: () => import('./components/dialogs/dialogs.module').then(m => m.DialogsModule), canActivate: [ChatGuard] },
-    ]}
+  { path: '', component: DialogsComponent }
 ]
 
 @NgModule({
   declarations: [
-    ChatComponent,
+    DialogsComponent,
+    UserMessagesComponent
   ],
   imports: [
     CommonModule,
@@ -26,11 +24,12 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
-    PipeModule
+    PipeModule,
+
   ],
   exports: [
   ],
   providers: [],
 })
 
-export class ChatModule { }
+export class DialogsModule { }

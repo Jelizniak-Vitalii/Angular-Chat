@@ -1,7 +1,10 @@
 $fontManrope: 'Manrope', 'Open Sans';
 
 .section__chat {
-  padding: 109px 60px 0 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 30px;
   .chat {
     max-width: 580px;
     .chat__title {
@@ -64,7 +67,7 @@ $fontManrope: 'Manrope', 'Open Sans';
   }
   .users {
     margin-top: 20px;
-    padding: 30px 40px;
+    padding: 15px;
     background-color: #fff;
     border-radius: 6px;
     .user__info {
@@ -74,6 +77,7 @@ $fontManrope: 'Manrope', 'Open Sans';
       .users__header {
         display: flex;
         align-items: center;
+        margin-right: 20px;
         .user__img {
           position: relative;
           margin-right: 20px;

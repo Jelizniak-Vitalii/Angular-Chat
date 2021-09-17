@@ -26,6 +26,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
+    MatIconModule,
   ],
   exports: [
   ],

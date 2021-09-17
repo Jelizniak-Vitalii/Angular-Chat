@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
-import { ChatService } from "./shared/chatService";
+import { ChatService } from "./shared/chat.Service";
 import { environment } from "src/environments/environment";
-import { UserData } from "./shared/chatInterface";
+import { UserData } from "./shared/chat.Interface";
 
 @Component({
   selector: 'app-chat',
@@ -13,8 +14,11 @@ export class ChatComponent implements OnInit {
 
   userMessageData: UserData[];
 
+
   constructor(
-    private chatHttpService: ChatService
+    private chatService: ChatService,
+    private router: Router,
+
   ) { }
 
   ngOnInit(): void {
@@ -22,15 +26,16 @@ export class ChatComponent implements OnInit {
   }
 
   getUserMessage(start: number, end: number) {
-    this.chatHttpService.getMessages(`${environment.CHAT_GET_MESSAGES}/${start}/${end}`)
+    this.chatService.getMessages(`${environment.CHAT_GET_MESSAGES_LIST}/${start}/${end}`)
       .subscribe((el:any) => {
         this.userMessageData = el
-        console.log(el)
       })
   }
 
   showMessageDialog(value: number) {
-    console.log(value)
+    // console.log(this.userMessageData[value])
+    this.chatService.userInfo.next(this.userMessageData[value])
+    this.router.navigate(['/main/chat/dialogs']);
   }
 
 }

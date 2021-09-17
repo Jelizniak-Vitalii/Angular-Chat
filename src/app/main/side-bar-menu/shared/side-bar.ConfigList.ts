@@ -1,4 +1,4 @@
-import { SideBarInterface } from "./sideBarInterface";
+import { SideBarInterface } from "./side-bar.Interface";
 
 export const SideBarConfigList: SideBarInterface[] = [
   { text: 'HOME', href: 'main/home', icon: 'apps_icon' },
