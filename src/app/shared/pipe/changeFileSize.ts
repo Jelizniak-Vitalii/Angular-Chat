@@ -8,10 +8,10 @@ export class ChangeFileSize implements PipeTransform {
   transform(value: number, ...args: any[]): any {
     const sizeValue = Math.floor(value / 1000);
     if(sizeValue < 1000 ) {
-      return this.fileSize = `${sizeValue} Kb`;
+      return this.fileSize = `${sizeValue} kb`;
     }
     if(sizeValue > 1000) {
-      return this.fileSize = `${sizeValue} Mb`;
+      return this.fileSize = `${sizeValue} mb`;
     }
     return this.fileSize
   }

@@ -1,8 +1,9 @@
-@import "./app/shared/style/reset";
+@import "assets/style/reset";
+@import '~@ctrl/ngx-emoji-mart/picker';
 
 @font-face {
   font-family: 'Manrope', 'Open Sans';
-  src: url("app/shared/fonts/Manrope-Bold.ttf");
+  src: url("assets/fonts/Manrope-Bold.ttf");
 }
 
 body {

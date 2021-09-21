@@ -6,16 +6,13 @@ import * as fromReducer from './reducers/reducer'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
-import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { MatIconModule } from "@angular/material/icon";
-import { PipeModule } from "./shared/pipe/pipe.module";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SharedModule } from "./shared/shared.module";
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { AuthInterceptor } from "./main/auth/shared/auth.Interceptor";
-
-
+import { AuthInterceptor } from "./core/pages/auth/shared/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -24,16 +21,15 @@ import { AuthInterceptor } from "./main/auth/shared/auth.Interceptor";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     StoreModule.forRoot({userData: fromReducer.reducers}),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([]),
-    MatIconModule,
-    PipeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

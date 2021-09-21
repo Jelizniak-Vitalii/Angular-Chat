@@ -1,0 +1,27 @@
+<aside class="aside active" [class.close]="isActive">
+  <div class="menu__icon" [class.close]="isActive">
+    <div (click)="isActive = !isActive">
+      <mat-icon *ngIf="!isActive; else close">menu_open_icon</mat-icon>
+      <ng-template #close><mat-icon>menu_icon</mat-icon></ng-template>
+    </div>
+  </div>
+  <div class="user" *ngFor="let user of userInfo">
+    <div [class.close]="isActive" class="user__img">
+      <img src="{{user.photo}}">
+    </div>
+    <div *ngIf="!isActive" class="user__name">
+      {{user.firstName + ' ' + user.lastName}}
+    </div>
+  </div>
+  <nav class="nav">
+    <ul class="menu">
+      <li *ngFor="let link of configList"
+          class="menu__item"
+          routerLinkActive="active"
+          [class.close]="isActive">
+        <mat-icon routerLink="{{link.href}}">{{link.icon}}</mat-icon>
+        <span *ngIf="!isActive">{{link.text}}</span>
+      </li>
+    </ul>
+  </nav>
+</aside>
