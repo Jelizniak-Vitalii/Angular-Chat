@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-emoji',
@@ -6,11 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./emoji.component.scss'],
 })
 export class EmojiComponent {
+  @Output() newEmoji = new EventEmitter<string>();
 
   constructor() {}
 
-  addEmoji(emoji: any) {
-    // this.messageInput.nativeElement.value += emoji.emoji.native
+  addEmoji(emoji: string ) {
+    this.newEmoji.emit(emoji)
   }
 
 }

@@ -1,0 +1,82 @@
+<div class="section-message">
+  <div class="user__message">
+    <ng-template ngFor let-message [ngForOf]="inputParams">
+      <div class="message message__incoming" *ngIf="message.type === 'member'">
+        <div class="user__img"><img src="{{message.photo}}"></div>
+        <ng-container *ngIf="message.text">
+          <div class="message__text">
+            {{message.text}}
+            <span class="message__date">{{+message.date | TransformTime}}</span>
+            <mat-icon class="message__edit">more_vert_icon</mat-icon>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="message.file">
+          <div class="user__file file__incoming">
+            <div class="file__content">
+              <mat-icon class="user__file_icon">description_icon</mat-icon>
+              <div class="file__info">
+                <span class="file__name">{{message.file.name}}</span>
+                <span class="file__size">{{message.file.size | ChangeFileSize}}</span>
+              </div>
+            </div>
+            <span class="message__date">{{+message.date | TransformTime}}</span>
+            <mat-icon class="message__edit">more_vert_icon</mat-icon>
+          </div>
+        </ng-container>
+      </div>
+    </ng-template>
+
+    <ng-template ngFor let-message [ngForOf]="inputParams">
+      <div class="message message__sending" *ngIf="message.type === 'user'">
+        <div class="message__sending_content">
+          <ng-container *ngIf="message.text">
+            <div class="message__text message__sending_text">
+              {{message.text}}
+                <mat-icon class="message__check checked" *ngIf="message.status === 'read'; else readMessage">done_all</mat-icon>
+                <ng-template #readMessage>
+                  <mat-icon class="message__check">done</mat-icon>
+                </ng-template>
+              <span class="message__date">{{+message.date | TransformTime}}</span>
+              <mat-icon class="message__edit">more_vert_icon</mat-icon>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="message.file">
+            <div class="user__file file__sending">
+              <mat-icon class="message__check checked" *ngIf="message.status === 'read'; else readMessage">done_all</mat-icon>
+              <ng-template #readMessage>
+                <mat-icon class="message__check ">done</mat-icon>
+              </ng-template>
+              <div class="file__content">
+                <mat-icon class="user__file_icon">description_icon</mat-icon>
+                <div class="file__info">
+                  <span class="file__name">{{message.file.name}}</span>
+                  <span class="file__size">{{message.file.size | ChangeFileSize}}</span>
+                </div>
+              </div>
+              <span class="message__date">{{+message.date | TransformTime}}</span>
+              <mat-icon class="message__edit">more_vert_icon</mat-icon>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <div class="message__input">
+    <div class="message__plus message__icon">
+      <mat-icon class="message__plus_icon icon">add_icon</mat-icon>
+      <div class="message__icon_groupe">
+        <mat-icon class="icon" (click)="openModalUploadFile()">movie_icon</mat-icon>
+        <mat-icon class="icon">description_icon</mat-icon>
+        <mat-icon class="icon">image_icon</mat-icon>
+      </div>
+    </div>
+    <textarea (input)="sendMessage($event)" #messageInput placeholder="Type a message here" class="input"></textarea>
+      <div class="smile">
+      <app-emoji (newEmoji)="addEmoji($event)"></app-emoji>
+      <div class="message__send_icon message__icon">
+        <mat-icon class="send__icon icon">telegram_icon</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

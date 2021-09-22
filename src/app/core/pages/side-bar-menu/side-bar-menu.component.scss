@@ -1,4 +1,4 @@
-@import "../../../../assets/mixin/adaptiveFont";
+@import "src/assets/mixin/adaptiveFont";
 
 $fontManrope: 'Manrope', 'Open Sans';
 
@@ -88,5 +88,17 @@ $fontManrope: 'Manrope', 'Open Sans';
   width: 80px;
   .menu__item,.menu__icon {
     justify-content: center;
+  }
+}
+
+
+@media (max-width: 990px) {
+  .menu__btn {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .aside.close {
+    width: 50px;
   }
 }

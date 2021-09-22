@@ -1,5 +1,5 @@
 <div class="message__smile">
-  <emoji-mart [showPreview]="false" [emojiSize]="20" (emojiClick)="addEmoji($event)"></emoji-mart>
+  <emoji-mart [showPreview]="false" [emojiSize]="20" (emojiClick)="addEmoji($event.emoji.native)"></emoji-mart>
   <mat-icon>emoji_emotions_icon</mat-icon>
 </div>
 

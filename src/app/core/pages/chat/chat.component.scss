@@ -1,3 +1,4 @@
+@import "src/assets/mixin/adaptiveFont";
 $fontManrope: 'Manrope', 'Open Sans';
 
 .section__chat {
@@ -13,7 +14,7 @@ $fontManrope: 'Manrope', 'Open Sans';
       align-items: center;
       .title {
         color: #0D1C2E;
-        font-size: 36px;
+        @include adaptiv-font(36, 24);
         line-height: 26px;
         font-family: $fontManrope;
       }
@@ -44,7 +45,7 @@ $fontManrope: 'Manrope', 'Open Sans';
         input {
           width: 100%;
           padding: 22px 0 22px 75px;
-          font-size: 18px;
+          @include adaptiv-font(18, 14);
           line-height: 26px;
           font-family: $fontManrope;
           border-radius: 6px 0 0 6px;
@@ -57,7 +58,7 @@ $fontManrope: 'Manrope', 'Open Sans';
         }
       }
       .select__chat {
-        font-size: 18px;
+        @include adaptiv-font(18, 14);
         line-height: 26px;
         font-family: $fontManrope;
         border-radius: 0 6px 6px 0;
@@ -104,21 +105,21 @@ $fontManrope: 'Manrope', 'Open Sans';
       .user__name {
         .name {
           font-weight: bold;
-          font-size: 18px;
+          @include adaptiv-font(18, 14);
           line-height: 21px;
           color: #0D1C2E;
           font-family: $fontManrope;
         }
         .user__status {
           color: #2A8BF2;
-          font-size: 16px;
+          @include adaptiv-font(16, 14);
           line-height: 19px;
           font-family: $fontManrope;
           margin-top: 6px;
         }
       }
       .users__message_time {
-        font-size: 16px;
+        @include adaptiv-font(16, 14);
         line-height: 19px;
         color: #707C97;
         font-family: $fontManrope;
@@ -131,7 +132,7 @@ $fontManrope: 'Manrope', 'Open Sans';
     .message__content {
       width: 95%;
       .message__text {
-        font-size: 16px;
+        @include adaptiv-font(16, 14);
         line-height: 26px;
         color: #707C97;
         font-family: $fontManrope;

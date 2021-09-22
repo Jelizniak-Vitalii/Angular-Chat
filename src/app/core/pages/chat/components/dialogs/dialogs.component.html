@@ -1,0 +1,19 @@
+<div class="dialog">
+  <div class="dialog__header">
+    <div class="user">
+      <div class="header__back" routerLink="/main/chat">
+        <mat-icon>keyboard_backspace_icon</mat-icon>
+      </div>
+      <div class="user__img"><img src="{{ (userInfo | async).photo }}" alt="User Photo"></div>
+      <div class="user__info">
+        <div class="user__name">{{ (userInfo | async).name }}</div>
+        <span class="user__activity">last online</span>
+      </div>
+    </div>
+    <div class="dialog__settings">
+      <button class="btn__attach btn"><mat-icon>attach_file_icon</mat-icon></button>
+      <button class="btn__settings btn"><mat-icon>more_vert_icon</mat-icon></button>
+    </div>
+  </div>
+  <app-user-messages [inputParameters]="messageData"></app-user-messages>
+</div>

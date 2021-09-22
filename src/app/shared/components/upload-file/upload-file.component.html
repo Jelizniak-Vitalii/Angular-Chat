@@ -1,0 +1,37 @@
+<app-modal-dialogs>
+  <div class="addFile">
+    <div class="addFile__header">
+      <h3 class="addFile__title">Upload File</h3>
+      <mat-icon class="form__close" mat-button mat-dialog-close>close_icon</mat-icon>
+    </div>
+    <p class="addFile__text">Drops the existing catalog and imports the new one</p>
+    <ngx-dropzone (change)="onSelect($event)" *ngIf="isLoaded; else dropActive">
+      <ngx-dropzone-label>Drag or Click here to upload files</ngx-dropzone-label>
+    </ngx-dropzone>
+
+    <ng-template #dropActive>
+      <ngx-dropzone-preview class="drop" [removable]="true" (removed)="onRemove(files[0])">
+        <ngx-dropzone-label *ngIf="files[0].size > 1e+8; else showMenu">Invalid File Size</ngx-dropzone-label>
+        <ng-template #showMenu>
+          <ngx-dropzone-label>{{ files[0].name }} {{files[0].size | ChangeFileSize}}</ngx-dropzone-label>
+        </ng-template>
+      </ngx-dropzone-preview>
+    </ng-template>
+    <div class="addFile__input">
+      <textarea
+        #addFileInput
+        (input)="messageInput()"
+        placeholder="Type a message here"
+        class="message__input"></textarea>
+    </div>
+
+    <span class="form__line"></span>
+    <div class="form__btnGroup">
+      <button mat-button mat-dialog-close class="form__btn_cancel">Cancel</button>
+      <button class="form__btn_addFile">
+        <mat-icon>check_icon</mat-icon>
+        Send message
+      </button>
+    </div>
+  </div>
+</app-modal-dialogs>
