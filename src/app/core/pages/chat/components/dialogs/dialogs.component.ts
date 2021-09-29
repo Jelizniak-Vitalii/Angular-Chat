@@ -12,6 +12,7 @@ import { DialogsInterface } from "./shared/dialogs.interface";
 })
 
 export class DialogsComponent implements OnInit {
+
   messageData: DialogsInterface;
   userInfo: Observable<any>;
 

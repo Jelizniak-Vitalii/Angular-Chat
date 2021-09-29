@@ -5,7 +5,7 @@ import { Subject } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 
-import { AuthService } from "src/app/core/pages/auth/shared/auth.Service";
+import { AuthService } from "src/app/core/pages/auth/shared/auth.service";
 import { environment } from "src/environments/environment";
 import { AuthenticationValue } from "../shared/auth.interface";
 import { userInfo } from "src/app/reducers/actions";

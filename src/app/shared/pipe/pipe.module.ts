@@ -11,7 +11,6 @@ import { ChangeFileSize } from "./changeFileSize";
   exports: [
     TransformTime,
     ChangeFileSize
-
   ]
 })
 export class PipeModule { }

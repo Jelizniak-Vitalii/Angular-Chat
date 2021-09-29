@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './modal-dialogs.component.html',
   styleUrls: ['./modal-dialogs.component.scss']
 })
+
 export class ModalDialogsComponent implements OnInit {
 
   constructor() { }

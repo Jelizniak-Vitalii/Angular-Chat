@@ -1,9 +1,9 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { select, Store } from "@ngrx/store";
 import { Selectors } from "../../../reducers/selector";
 
-import { UserInfo } from "./shared/side-bar.Interface";
-import { SideBarConfigList } from "./shared/side-bar.ConfigList";
+import { UserInfo } from "./shared/side-bar.interface";
+import { SideBarConfig } from "./shared/side-bar.config";
 
 @Component({
   selector: 'app-side-bar-menu',
@@ -15,12 +15,12 @@ export class SideBarMenuComponent implements OnInit {
   isActive: boolean = true;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    if(event.target.innerWidth < 990) {
+    if (event.target.innerWidth < 990) {
       this.isActive = true;
     }
   }
   userInfo: UserInfo[] = [];
-  configList = SideBarConfigList;
+  configList = SideBarConfig;
 
   mockUserData = {
     firstName: 'Vasya',

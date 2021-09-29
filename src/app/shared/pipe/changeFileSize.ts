@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 export class ChangeFileSize implements PipeTransform {
   fileSize: string  = '';
-  transform(value: number, ...args: any[]): any {
+  transform(value: number, ...args: any[]): string {
     const sizeValue = Math.floor(value / 1000);
     if(sizeValue < 1000 ) {
       return this.fileSize = `${sizeValue} kb`;

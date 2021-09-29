@@ -1,6 +1,6 @@
-import { SideBarInterface } from "./side-bar.Interface";
+import { SideBarInterface } from "./side-bar.interface";
 
-export const SideBarConfigList: SideBarInterface[] = [
+export const SideBarConfig: SideBarInterface[] = [
   { text: 'HOME', href: 'main/home', icon: 'apps_icon' },
   { text: 'CHAT', href: '/main/chat', icon: 'sms_icon' },
   { text: 'CONTACT', href: 'contact', icon: 'person_icon' },

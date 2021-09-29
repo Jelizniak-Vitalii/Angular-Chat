@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 
 
@@ -7,6 +7,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
   templateUrl: './emoji.component.html',
   styleUrls: ['./emoji.component.scss'],
 })
+
 export class EmojiComponent {
   @Output() newEmoji = new EventEmitter<string>();
 

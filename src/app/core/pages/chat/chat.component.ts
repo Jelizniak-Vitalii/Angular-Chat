@@ -10,10 +10,10 @@ import { UserData } from "./shared/chat.interface";
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
+
 export class ChatComponent implements OnInit {
 
   userMessageData: UserData[];
-
 
   constructor(
     private chatService: ChatService,
@@ -36,5 +36,4 @@ export class ChatComponent implements OnInit {
     this.chatService.userInfo.next(this.userMessageData[value])
     this.router.navigate(['/main/chat/dialogs']);
   }
-
 }

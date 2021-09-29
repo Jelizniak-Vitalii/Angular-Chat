@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { AuthService } from "src/app/core/pages/auth/shared/auth.Service";
+import { AuthService } from "src/app/core/pages/auth/shared/auth.service";
 import { environment } from "src/environments/environment";
 import { inputConfigList } from "../shared/auth.config";
 import { AuthenticationValue } from "../shared/auth.interface";
@@ -17,7 +17,7 @@ export class RegistrationComponent {
   public inputConfigList = inputConfigList;
   public userData: AuthenticationValue;
 
-  public form: FormGroup = new FormGroup({
+  public readonly form: FormGroup = new FormGroup({
     firstName: new FormControl('',[ Validators.required ]),
     lastName: new FormControl('',[ Validators.required ]),
     email: new FormControl('',[ Validators.required, Validators.email ]),

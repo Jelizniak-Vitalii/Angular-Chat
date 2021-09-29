@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { inputConfigList } from "../shared/auth.config";
-import { AuthService } from "src/app/core/pages/auth/shared/auth.Service";
+import { AuthService } from "src/app/core/pages/auth/shared/auth.service";
 import { environment } from "src/environments/environment";
 
 @Component({

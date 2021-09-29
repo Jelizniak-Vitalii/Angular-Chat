@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {BehaviorSubject } from "rxjs";
-import {UserData} from "./chat.interface";
+import { BehaviorSubject } from "rxjs";
+
+import { UserData } from "./chat.interface";
 
 @Injectable({
   providedIn: 'root'

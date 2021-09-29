@@ -1,9 +1,9 @@
 <div class="login">
   <form class="form" (ngSubmit)="submit()" [formGroup]="form">
     <div class="form__title">
-      <button class="form__signIn title_btn" routerLinkActive="active">Sign In</button>
+      <button type="button" class="form__signIn title_btn" routerLinkActive="active">Sign In</button>
       <span class="form__title_separator">/</span>
-      <button class="form__signUp title_btn" routerLink="/auth/registration">Sign Up</button>
+      <button type="button" class="form__signUp title_btn" routerLink="/auth/registration">Sign Up</button>
     </div>
     <app-form-input [inputParameters]="inputConfigList.email" formControlName="email"></app-form-input>
     <app-form-input [inputParameters]="inputConfigList.password" formControlName="password"></app-form-input>

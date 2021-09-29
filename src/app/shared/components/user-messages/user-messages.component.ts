@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, NgIterable, ViewChild } from '@angular/core';
-import { MatDialog} from "@angular/material/dialog";
+import { MatDialog } from "@angular/material/dialog";
 import { UploadFileComponent } from "../upload-file/upload-file.component";
 import { DialogsInterface } from "../../../core/pages/chat/components/dialogs/shared/dialogs.interface";
 

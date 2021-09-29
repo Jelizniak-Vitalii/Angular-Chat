@@ -14,20 +14,19 @@ export class ChatGuard implements CanActivate {
     private chatService: ChatService,
   ){}
 
-  canEntry: boolean
+  canEntry: boolean;
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     this.chatService.userInfo$.subscribe((obj:any) => {
-      this.canEntry = obj
+      this.canEntry = obj;
     });
-    if(!!Object.keys(this.canEntry).length) {
+    if (!!Object.keys(this.canEntry).length) {
       return true
     } else {
       this.router.navigate(['main/chat']);
       return false
     }
-
   }
 }

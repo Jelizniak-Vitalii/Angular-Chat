@@ -5,7 +5,7 @@ import { SharedModule } from "../../../shared/shared.module";
 
 import { ChatComponent } from "./chat.component";
 import { ChatGuard } from "./shared/chat.guard";
-import { DialogsResolver } from "./components/dialogs/shared/dialogs.Resolver";
+import { DialogsResolver } from "./components/dialogs/shared/dialogs.resolver";
 
 const routes: Routes = [
   { path: '', component: ChatComponent },

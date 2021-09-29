@@ -7,7 +7,7 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { AuthenticationComponent } from "./authentication/authentication.component";
 import { LoginComponent } from "./login/login.component";
 import { AuthenticationInputComponent } from "src/app/core/pages/auth/components/authentication-input/authentication-input.component";
-import { AuthResolver } from "./shared/auth.Resolver";
+import { AuthResolver } from "./shared/auth.resolver";
 import { FormInputComponent } from "./components/form-input/form-input.component";
 
 const routes: Routes = [

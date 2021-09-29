@@ -12,7 +12,8 @@ import { SharedModule } from "./shared/shared.module";
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { AuthInterceptor } from "./core/pages/auth/shared/auth.interceptor";
+import { TokenInterceptor } from "./shared/interceptor/token.interceptor";
+import { ErrorHandlerInterceptor } from "./shared/interceptor/error-hadler.interceptor";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { AuthInterceptor } from "./core/pages/auth/shared/auth.interceptor";
     BrowserAnimationsModule,
     SharedModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorHandlerInterceptor, multi: true }
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })
